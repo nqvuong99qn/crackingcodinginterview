@@ -16,14 +16,17 @@ public class removeDuplicatesFromSortedArray {
 		return result;
 	}
 	
+	// best to use
+	// easy to read
+	// best perfomance
 	int removeDuplicates_v1(int[] arr) {
 		int len = arr.length;
 		
 		int i = 0;
 		for(int j = 1; j < len; j++) {
 			if(arr[j] != arr[i]) {
-				arr[i] = arr[j];
 				i++;
+				arr[i] = arr[j];
 			}
 		}
 		return i + 1;
@@ -43,7 +46,7 @@ public class removeDuplicatesFromSortedArray {
 		arr[5] = 4;
 		arr[6] = 4;
 
-		System.out.println("Expected: " + solution.removeDuplicates(arr));
+		//System.out.println("Expected: " + solution.removeDuplicates(arr));
 		System.out.println("Expected_v1: " + solution.removeDuplicates_v1(arr));
 
 	}

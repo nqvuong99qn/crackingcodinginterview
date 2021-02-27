@@ -1,7 +1,10 @@
 package javaPractice;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class twosum {
 
@@ -17,7 +20,59 @@ public class twosum {
 //		}
 //		return null;
 //	}
-//	
+//
+	// naive approach
+	// O(n2): Time Complexity
+	// O(1): Space Complexity
+	public boolean twosum1(int[] nums, int target) {
+
+		int len = nums.length;
+
+		for (int i = 0; i < len; i++) {
+			for (int j = i + 1; j < len; j++) {
+				if (nums[i] + nums[j] == target) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	// better approach
+	// O(nlog(n): Time complexity
+	// O(1): Space Complexity
+	public boolean twosum2(int[] nums, int target) {
+
+		Arrays.sort(nums); // O(nlog(n))
+		int lastIndex = nums.length - 1;
+		int firstIndex = 0;
+		while (firstIndex < lastIndex) {
+			int check = nums[firstIndex] + nums[lastIndex] - target;
+			if (check == 0) {
+				return true;
+			} else if (check > 0) {
+				lastIndex--;
+			} else
+				firstIndex++;
+		}
+		return false;
+	}
+
+	// optimal solution
+	// evaluate:
+	// O(n): time complexity
+	// O(n): space complexity
+	public boolean twosum3(int[] nums, int target) {
+
+		Set set = new HashSet<>();
+		for (int i = 0; i < nums.length; i++) {
+			if (set.contains(target - nums[i])) {
+				return true;
+			}
+			set.add(nums[i]);
+		}
+		return false;
+	}
 
 	public int[] twoSum(int[] nums, int target) {
 
