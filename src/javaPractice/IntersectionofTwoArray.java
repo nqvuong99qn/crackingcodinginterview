@@ -1,7 +1,9 @@
 package javaPractice;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class IntersectionofTwoArray {
@@ -80,7 +82,58 @@ public class IntersectionofTwoArray {
 	
 	// method 3: sort two arrays, using two pointer
 	
+	int[] intersecter3(int[] n1, int[] n2) {
+		// check input
+		if(n1.length == 0 || n2.length == 0) {
+			return  null;
+		}
+		
+		Arrays.sort(n1);
+		Arrays.sort(n2);
+		
+		int i = 0;
+		int j = 0;
+		Set<Integer> set = new HashSet<>();
+		while(i < n1.length && j < n2.length) {
+			int check = n1[i] - n2[j];
+			if(check == 0) {
+				set.add(n1[i]);
+				i++;
+				j++;
+			}
+			else if(check > 0) {
+				j++;
+			}
+			else i++;
+		}
+		int[] result = new int[set.size()];
+		int id  = 0;
+		for(int item : set) {
+			result[id++] = item;
+		}
+		return result;
+	}
+	
 	// method 4: using hash table!
+	
+	int[] interset4(int[] n1, int[] n2){
+		Set<Integer> set = new HashSet<>();
+		for(int item : n1) {
+			set.add(item);
+		}
+		List<Integer> lst = new ArrayList<>();
+		for(int item : n2) {
+			if(set.contains(item)) {
+				lst.add(item);
+			}
+		}
+		int[] result = new int[lst.size()];
+		int id = 0;
+		for(int item : lst) {
+			result[id++] = item;
+		}
+		return result;
+	}
 	
 	
 	public static void main(String[] args) {

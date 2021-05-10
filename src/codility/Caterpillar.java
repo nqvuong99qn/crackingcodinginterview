@@ -13,6 +13,38 @@ public class Caterpillar {
 		return set.size();
 	}
 	
+	boolean subArrayConsecutive(int[] A, int s) {
+		
+		int left = 0;
+		int right = A.length - 1;
+		
+		int sum = 0;
+		int i = 0;
+		while(left < right) {
+			sum += A[left++];
+			
+			if(sum > s) {
+				sum -= A[i];
+				i++;
+			}
+			if(sum == s) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Say hi!!!");
+		
+		Caterpillar test = new Caterpillar();
+		
+		test.subArrayConsecutive(new int[] {1, 2, 3, 4}, 8);
+		
+		
+	}
+	
 	
 	
 	

@@ -18,6 +18,8 @@ public class FrogJmp {
 		
 		FrogJmp test = new FrogJmp();
 		
+		test.solution(1, 4, 5);
+		
 		
 	}
 

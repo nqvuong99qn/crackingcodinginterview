@@ -458,6 +458,38 @@ public class test {
 		}
 		return x == reverse;
 	}
+	
+	// quick sort
+	
+	void quickSort(int[] arr, int l, int r) {
+		if(l < r) {
+			int parti = partition(arr, l, r);
+			quickSort(arr, l, parti - 1);
+			quickSort(arr, parti + 1, r);
+		}
+	}
+	
+	void swap(int[] arr, int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+	int partition(int arr[], int l, int r) {
+		
+		int pivot = arr[l];
+		int left = l + 1;
+		int right = r;
+		while(true) {
+			while(left <= r && arr[left] < pivot) left++;
+			while(right >= l && arr[right] > pivot) right--;
+			if(left >= right) break;
+			swap(arr, left, right);
+			left++;
+			right--;	
+		}
+		swap(arr, l, right);
+		return right;
+	}
 
 
 	public static void main(String args[]) {
@@ -473,7 +505,9 @@ public class test {
 
 		a.DecimalToBinary(9);
 
-		System.out.println((int) (Math.log(16) / Math.log(2)));
+		int[] arr = {5,5,7,3,1,2,3,6,7,8,56,34};
+		a.quickSort(arr, 0, arr.length - 1);
+		System.out.println(Arrays.toString(arr));
 
 	}
 

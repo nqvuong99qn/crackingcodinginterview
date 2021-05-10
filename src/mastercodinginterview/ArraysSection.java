@@ -35,7 +35,7 @@ public class ArraysSection {
 
 	}
 
-	// two point
+	// two pointer
 	public int[] twoSum1(int[] nums, int target) {
 		
 		int len = nums.length;

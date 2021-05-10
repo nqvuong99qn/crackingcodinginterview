@@ -36,7 +36,10 @@ public class FirstUniqueCharInString {
 	
 
 	public static void main(String[] args) {
-
+		
+		
+		
+		
 		System.out.println("say hi!!");
 		
 		FirstUniqueCharInString test = new FirstUniqueCharInString();

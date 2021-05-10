@@ -14,5 +14,21 @@ public class FindPivotIndex {
 		}
 		return -1;
 	}
+	
+	
+	
+	
+	
+	public static void main(String args[]) {
+		
+		System.out.println("say hi!!!");
+		
+		FindPivotIndex test = new FindPivotIndex();
+		
+
+		
+		
+		
+	}
 
 }

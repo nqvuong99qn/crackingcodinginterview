@@ -1,5 +1,14 @@
 package codility;
 
+/*
+ * Problem!!
+ * You are given integers K, M and a non-empty array A consisting of N integers. 
+ * Every element of the array is not greater than M.
+ * You should divide this array into K blocks of consecutive elements. 
+ * The size of the block is any integer between 0 and N. Every element of 
+ * the array should belong to some block.
+ */
+
 public class BinarySearch {
 
 	int minMaxDivision(int K, int M, int A[]) {

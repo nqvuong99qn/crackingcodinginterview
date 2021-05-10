@@ -108,7 +108,7 @@ public class TreeAndGraph {
 		
 		System.out.println("Finish!");
 		
-		g.BFS(n0);
+		g.search(n0);
 		
 
 		

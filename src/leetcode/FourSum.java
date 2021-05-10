@@ -59,5 +59,63 @@ public class FourSum {
 	}
 	
 	
+	List<List<Integer>> FiveSum(int[] arr, int target){
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		if(arr.length == 0)
+			return result;
+		return KsumV1(arr, target, 0, 5);
+	}
+	List<List<Integer>> KsumV1(int[] arr, int target, int index, int K){
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		if(index > arr.length - 1)
+			return result;
+		if(K == 2) {
+			// two poiter here
+			int left = index;
+			int right = arr.length - 1;
+			while(left < right) {
+				List<Integer> temp = new ArrayList<Integer>();
+				int check = target - arr[left] - arr[right];
+				if(check == 0) {
+					temp.add(arr[left]);
+					temp.add(arr[right]);
+					result.add(temp);
+					while(left < right && arr[left] == arr[left+1]) left++;
+					while(left < right && arr[right] == arr[right-1]) right--;
+					left++;
+					right--;
+				}
+				else if(check > 0) {
+					left++;
+				}
+				else right--;
+			}
+		}
+		else {
+			for(int i = index; i < arr.length - K + 1; i++) {
+				List<List<Integer>> temp = KsumV1(arr, target - arr[i], index + 1, K - 1);
+				if(temp != null) {
+					for(List<Integer> item : temp) {
+						item.add(arr[i]);
+					}
+					result.addAll(temp);
+				}
+				while(i < arr.length - 1 && arr[i] == arr[i+1]) i++;
+			}
+		}
+		return result;
+	}
+	
+	
+	public static void main(String[] args) {
+		System.out.println("ahihi");
+		
+		FourSum test = new FourSum(); 
+		
+		int[] arr = {-2, 1, -1, 2, 0, 0};
+		
+		List<List<Integer>> result = test.FiveSum(arr, 0);
+	}
+	
 
 }

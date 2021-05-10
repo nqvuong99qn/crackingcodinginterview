@@ -2,7 +2,7 @@ package codility;
 
 public class BinaryGap {
 
-	int BinaryGap(int N) {
+	int BinaryGapp(int N) {
 
 		String binary = Integer.toBinaryString(N);
 		int longest = 0;
@@ -22,5 +22,5 @@ public class BinaryGap {
 		}
 		return longest;
 	}
-
+	
 }

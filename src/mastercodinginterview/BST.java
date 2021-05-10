@@ -64,6 +64,36 @@ public class BST {
 		
 	}
 	
+	int sum(Node head) {
+		if(head == null) {
+			return 0;
+		}
+		return head.data + sum(head.left) + sum(head.right);
+	}
+	
+	
+	Node insert(int[] arr, Node root, int i) {
+		if (i < arr.length) { 
+            Node temp = new Node(arr[i]); 
+            root = temp;  
+            root.left = insert(arr, root.left, 2 * i + 1); 
+  
+            // insert right child 
+            root.right = insert(arr, root.right, 2 * i + 2); 
+        } 
+        return root; 
+	}
+	
+	int countChild(Node root) {
+		if(root == null)
+			return 0;
+		return countChild(root.left) + countChild(root.right) + 1;
+		
+	}
+	
+
+	
+	
 	
 	public static void main(String[] args) {
 		System.out.println("Say hi!!!!");
@@ -84,6 +114,10 @@ public class BST {
 		System.out.println();
 		System.out.println("Post Order: ");
 		test.printPostOrder(test.head);
+		
+		test.sum(test.head);
+		
+		test.countChild(test.head);
 		
 		
 	}

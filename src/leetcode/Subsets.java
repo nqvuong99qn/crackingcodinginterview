@@ -28,7 +28,7 @@ public class Subsets {
 	public static void main(String[] args) {
 
 		System.out.println("say hi!!");
-
+		
 		Subsets test = new Subsets();
 
 		System.out.println("Expected result: " + test.solution(new int[]{1, 2}));

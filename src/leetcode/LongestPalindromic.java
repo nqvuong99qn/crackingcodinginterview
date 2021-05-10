@@ -31,8 +31,10 @@ public class LongestPalindromic {
 	
 	
 	//best solution
+	int count = 0;
 	String solution2(String s) {
 		String max = "";
+		
 		for(int i = 0; i < s.length(); i++) {
 			String s1 = extend(s, i, i);
 			String s2 = extend(s, i, i + 1);
@@ -44,6 +46,8 @@ public class LongestPalindromic {
 	String extend(String s, int i, int j) {
 		for(;i >= 0 && j < s.length();i--, j++) {
 			if(s.charAt(i) != s.charAt(j)) break;
+			if(i != j)
+				count++;
 		}
 		return s.substring(i+1, j);
 	}
@@ -95,7 +99,17 @@ public class LongestPalindromic {
 		System.out.println("Expected result: " + test.solution("121213"));
 		
 		test.interpret("G()()()()(al)");
+		
+		
+		String a = "abcde";
+		
+		System.out.println(a.substring(3, 4));
+		
+		
+		test.solution2("abaab");
+		
 
+		
 
 
 	}

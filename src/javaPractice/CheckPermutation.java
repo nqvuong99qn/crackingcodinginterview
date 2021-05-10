@@ -22,7 +22,7 @@ public class CheckPermutation {
 		if(len != b.length()) {
 			throw new IllegalArgumentException("Wrong input parameter!");
 		}
-		for(int i = 0; i < len; i++) {
+		for(int i = 0; i < len; i++) { 
 			if(!b.contains(a.subSequence(i, i+1)))
 				return false;	
 		}		
@@ -95,10 +95,6 @@ public class CheckPermutation {
 			if(char_set[b.charAt(i)] < 0)
 				return false;
 		}
-		
-		
-		
-		
 		return true;
 	}
 	
@@ -111,6 +107,13 @@ public class CheckPermutation {
 		boolean result = check.check("abbba", "aabbb");
 		
 		System.out.println("Expected result: " + result);
+		String a = "abc d e                   ";
+		System.out.println("result: " + a);
+		
+		a = a.replaceAll("\\s+", "");
+		
+		System.out.println("result: " + a);
+		
 
 
 		

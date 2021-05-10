@@ -293,7 +293,40 @@ public class LinkedList {
 		}
 		return new LinkedList(longer);
 		
+	}
+	
+	// only  detect loop
+	boolean detectLoop(Node head) {
+		Node fast = head;
+		Node slow = head;
+		while(fast != null && fast.next != null && slow != fast) {
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+		return slow == fast;
+	}
+	
+	
+	// find begining node
+	Node findBeginningNode(Node head) {
+		if(head == null) {
+			return null;
+		}
+		Node fast = head;
+		Node slow = head;
+		while(fast != null && fast.next != null && fast != slow) {
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+		Node temp = head;
+		while(temp != slow) {
+			temp = temp.next;
+			slow = slow.next;
+		}
 		
+		
+		
+		return temp;
 	}
 	
 	
@@ -309,7 +342,7 @@ public class LinkedList {
 //		list.addLast(2);
 //		list.addLast(3);
 		
-		
+		boolean[] t = new boolean[4];
 		
 		Node n1 = list.init(1);
 		Node n2 = list.init(2);
@@ -329,6 +362,9 @@ public class LinkedList {
 		Node curr = list.head;
 		
 		Stack<Integer> stack = new Stack<>();
+		
+		
+		
 		
 		
 		

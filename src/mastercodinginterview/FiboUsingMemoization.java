@@ -37,6 +37,7 @@ public class FiboUsingMemoization {
 				
 		
 		System.out.println("Expected result: " + test.fiboMaster(10) + " count: " + test.count);
+		System.out.println("Expected result: " + test.fibo(10) + " count: " + test.count);
 		
 		
 	}
