@@ -16,7 +16,6 @@ public class LongestConsecutiveSequence {
 		int result = 0;
 		for(int item : set) {
 			if(!set.contains(item-1)) {
-				int curr = item;
 				int currMax = 1;
 				while(set.contains(item+1)) {
 					item++;
