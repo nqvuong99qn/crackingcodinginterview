@@ -1,12 +1,9 @@
-/mock/
-/leetcode/
-*.class
 # User-specific files
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
-
+*.class
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
