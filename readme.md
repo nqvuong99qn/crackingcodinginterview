@@ -1,4 +1,4 @@
 ## Cracking coding interview
 
-Let's this practice foundation alogrithm and data structure before getting a coding interview. Don't feel scared. Let prove your value and prove yourselft.
+Let's practice all foundation alogrithms and data structures in this repo before getting a coding interview. Don't feel scared with coding interview. Let prove your value and prove yourseft.
 Common and try our best.
