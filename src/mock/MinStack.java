@@ -1,4 +1,4 @@
-package mock;
+~package mock;
 
 import java.util.Stack;
 

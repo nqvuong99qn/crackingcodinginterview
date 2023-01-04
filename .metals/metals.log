@@ -4451,3 +4451,29 @@ WARNING: Unmatched cancel notification for request id 1240
 Oct 11, 2022 1:26:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 3
 2022.10.11 13:26:29 INFO  shutting down Metals
+2023.01.04 12:07:17 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vunguyen/Documents/myRepo/crackingcodinginterview/.metals/lsp.trace.json or /Users/vunguyen/Library/Caches/org.scalameta.metals/lsp.trace.json
+2023.01.04 12:07:17 INFO  logging to file /Users/vunguyen/Documents/myRepo/crackingcodinginterview/.metals/metals.log
+2023.01.04 12:07:17 INFO  Started: Metals version 0.11.10 in workspace '/Users/vunguyen/Documents/myRepo/crackingcodinginterview' for client Visual Studio Code 1.74.2.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/Users/vunguyen/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.01.04 12:07:18 INFO  time: initialize in 1.38s
+2023.01.04 12:07:20 WARN  Build server is not auto-connectable.
+2023.01.04 12:07:20 WARN  no build tool detected in workspace '/Users/vunguyen/Documents/myRepo/crackingcodinginterview'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.01.04 12:07:20 WARN  no build target for: /Users/vunguyen/Documents/myRepo/crackingcodinginterview/src/mock/MinStack.java
+Jan 04, 2023 12:07:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+Jan 04, 2023 12:07:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2023.01.04 12:07:22 WARN  no build target for: /Users/vunguyen/Documents/myRepo/crackingcodinginterview/src/mock/MinStack.java
+2023.01.04 12:07:23 WARN  Running javac-semanticdb failed for file:///Users/vunguyen/Documents/myRepo/crackingcodinginterview/src/mock/MinStack.java. Output:
+/Users/vunguyen/Documents/myRepo/crackingcodinginterview/src/mock/MinStack.java:1: error: class, interface, or enum expected
+~package mock;
+^
+1 error
+2023.01.04 12:07:23 INFO  time: code lens generation in 2.25s
+Jan 04, 2023 12:08:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
