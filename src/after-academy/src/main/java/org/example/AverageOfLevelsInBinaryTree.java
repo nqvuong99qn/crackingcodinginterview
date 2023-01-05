@@ -2,7 +2,6 @@ package org.example;
 
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Problem: https://afteracademy.com/blog/average-of-levels-in-binary-tree/
@@ -18,64 +17,60 @@ get all Node for each level then compute
 
  */
 
-public class AverageOfLevelsInBinaryTree {
+class AverageOfLevelsInBinaryTree {
 
-    private BTree bTree;
+    public static void main(String[] args) {
+        S1 s = new S1();
 
-    private Solution solution;
-
-    public AverageOfLevelsInBinaryTree() {
-        this.bTree = new BTree(null);
-
-        this.solution = new Solution();
+        BTree b = new BTree();
+        BTree tree = b.buildBTree();
+        tree.print(tree.head);
+        s.solution(tree);
     }
+}
 
-    public class BTree {
+class BTree {
 
-        public Node head;
+    public Node head = null;
 
-        public BTree(Node head) {
-            this.head = head;
-        }
-
-        void print(Node node) {
-            if (node != null) {
-                print(node.left);
-                System.out.print(node.value + "-->");
-                print(node.right);
-            }
-        }
-
-        BTree buildBTree() {
-            Node n1 = new Node(1);
-            Node n2 = new Node(5);
-            Node n3 = new Node(3);
-            BTree tree = new BTree(n1);
-            n1.left = n2;
-            n1.right = n3;
-            return tree;
-        }
-
-    }
-
-    public class Node {
-        Node left;
-        Node right;
-        int value;
-
-        public Node(int value) {
-            this.left = null;
-            this.right = null;
-            this.value = value;
+    void print(Node node) {
+        if (node != null) {
+            print(node.left);
+            System.out.print(node.value + "-->");
+            print(node.right);
         }
     }
 
+    BTree buildBTree() {
+        Node n1 = new Node(1);
+        Node n2 = new Node(5);
+        Node n3 = new Node(3);
+        BTree tree = new BTree();
+        tree.head = n1;
+        n1.left = n2;
+        n1.right = n3;
+        return tree;
+    }
+}
 
-    public class Solution {
+class Node {
+    Node left;
+    Node right;
+    int value;
 
-        public LinkedList<Integer> solution(BTree tree) {
+    public Node(int value) {
+        this.left = null;
+        this.right = null;
+        this.value = value;
+    }
 
-            // ideal
+}
+
+
+class S1 {
+    public LinkedList<Integer> solution(BTree tree) {
+
+        // ideal
             /*
             use the temp queue
             push root to queue.
@@ -96,56 +91,42 @@ public class AverageOfLevelsInBinaryTree {
             }
              */
 
-            // corner case first
-            if (tree.head == null) {
-                throw new RuntimeException("STOP");
-            }
-
-            LinkedList<Node> queue = new LinkedList<>();
-            LinkedList<Integer> result = new LinkedList<>();
-
-            queue.add(tree.head);
-            // add the first  to queue result
-            result.add(tree.head.value);
-
-
-            while (!queue.isEmpty()) {
-                int previousLevelNoNode = queue.size();
-                int sum = 0;
-                Node currNode = queue.remove();
-                int currLevelNoNode = 0;
-
-                while (previousLevelNoNode > 0) {
-                    if (currNode.left != null) {
-                        currLevelNoNode++;
-                        queue.add(currNode.left);
-                        sum += currNode.left.value;
-                    }
-                    if (currNode.right != null) {
-                        currLevelNoNode++;
-                        queue.add(currNode.right);
-                        sum += currNode.right.value;
-                    }
-                    previousLevelNoNode--;
-                }
-                if (currLevelNoNode > 0) {
-                    result.add((sum / currLevelNoNode));
-                }
-            }
-            return result;
+        // corner case first
+        if (tree.head == null) {
+            throw new RuntimeException("STOP");
         }
-    }
 
-    public static void main(String[] args) {
-        AverageOfLevelsInBinaryTree a = new AverageOfLevelsInBinaryTree();
+        LinkedList<Node> queue = new LinkedList<>();
+        LinkedList<Integer> result = new LinkedList<>();
 
-        BTree tree = a.bTree.buildBTree();
+        queue.add(tree.head);
+        // add the first  to queue result
+        result.add(tree.head.value);
 
-        tree.print(tree.head);
 
-        LinkedList<Integer> result = a.solution.solution(tree);
+        while (!queue.isEmpty()) {
+            int previousLevelNoNode = queue.size();
+            int sum = 0;
+            Node currNode = queue.remove();
+            int currLevelNoNode = 0;
 
-        System.out.println(result);
-
+            while (previousLevelNoNode > 0) {
+                if (currNode.left != null) {
+                    currLevelNoNode++;
+                    queue.add(currNode.left);
+                    sum += currNode.left.value;
+                }
+                if (currNode.right != null) {
+                    currLevelNoNode++;
+                    queue.add(currNode.right);
+                    sum += currNode.right.value;
+                }
+                previousLevelNoNode--;
+            }
+            if (currLevelNoNode > 0) {
+                result.add((sum / currLevelNoNode));
+            }
+        }
+        return result;
     }
 }
