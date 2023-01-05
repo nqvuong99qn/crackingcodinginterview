@@ -12,11 +12,11 @@ class Main {
     }
 }
 
-class Solution {
+class SolutionForm {
 
     private Object object;
 
-    public Solution() {
+    public SolutionForm() {
         this.object = new Object();
     }
 
